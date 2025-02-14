@@ -5,7 +5,8 @@
 		{ name: 'Counter', link: '/counter' },
 		{ name: 'Temperature Converter', link: '/temperature-converter' },
 		{ name: 'Flight Booker', link: '/flight-booker' },
-		{ name: 'Timer', link: '/timer' }
+		{ name: 'Timer', link: '/timer' },
+		{ name: 'CRUD', link: '/crud' }
 	];
 </script>
 

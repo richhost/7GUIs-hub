@@ -6,6 +6,6 @@
 	const { class: className, children, ...props }: Props = $props();
 </script>
 
-<div class="not-prose mx-auto p-5 border {className}" {...props}>
+<div class="not-prose bg-white shadow-neo-xl mx-auto p-5 border {className}" {...props}>
 	{@render children?.()}
 </div>
