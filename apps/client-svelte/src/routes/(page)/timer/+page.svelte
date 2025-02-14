@@ -55,3 +55,12 @@
 
 	<Button onclick={reset}>Reset</Button>
 </Preview>
+
+<p>
+	Fourth task of <a
+		target="_blank"
+		rel="noopener noreferrer"
+		href="https://eugenkiss.github.io/7guis/tasks/#timer"
+		>The 7 Tasks from 7GUIs
+	</a>.
+</p>
