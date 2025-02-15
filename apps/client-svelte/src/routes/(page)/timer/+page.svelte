@@ -2,7 +2,7 @@
 	import Button from '$lib/components/ui/button.svelte';
 	import Preview from '$lib/components/ui/preview.svelte';
 	import Progress from '$lib/components/ui/progress.svelte';
-	import Slider, { type ValueChangeDetails } from '$lib/components/ui/slider.svelte';
+	import Slider from '$lib/components/ui/slider.svelte';
 
 	let elapsed = $state(0);
 	let duration = $state(0);
@@ -24,14 +24,9 @@
 		start();
 	}
 
-	function durationValueChange(details: ValueChangeDetails) {
-		const [value] = details.value;
-		duration = value;
-		clearInterval(interval);
-		start();
-	}
-
 	$effect(() => {
+		if (!duration) return;
+		start();
 		return () => clearInterval(interval);
 	});
 </script>
@@ -45,13 +40,10 @@
 		<Progress class="grow" value={elapsed} max={duration} />
 	</label>
 
-	<Slider
-		label="Duration:"
-		value={[duration]}
-		onValueChange={durationValueChange}
-		min={0}
-		max={20}
-	/>
+	<label class="flex items-center gap-2">
+		<span>Duration:</span>
+		<Slider class="w-full" bind:value={duration} step={0.1} min={0} max={20} />
+	</label>
 
 	<Button onclick={reset}>Reset</Button>
 </Preview>
