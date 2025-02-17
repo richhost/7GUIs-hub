@@ -2,8 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-head: "Archivo Black", sans-serif;
-  --font-sans: "Share Tech", sans-serif;
+  --font-head: var(--font-head);
+  --font-sans: var(--font-share-tech);
 
   --shadow-neo-sm: 1px 1px 0 0 rgb(0 0 0);
   --shadow-neo-md: 3px 3px 0 0 rgb(0 0 0);
@@ -11,7 +11,6 @@
 }
 
 body {
-  @apply font-sans;
   background: #f5e6d3;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
